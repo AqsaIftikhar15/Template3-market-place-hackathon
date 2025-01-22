@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image'; 
+import Link from 'next/link';
 
 const SignUp = () => {
   return (
@@ -6,7 +8,13 @@ const SignUp = () => {
       <div className="w-full max-w-md p-8 bg-white shadow-md rounded-lg">
         <div className="text-center mb-4">
           {/* Adjusted logo size and margin */}
-          <img src="/logo2.png" alt="Nike Logo" className="mx-auto mb-2 w-16" />
+          <Image
+            src="/logo2.png"
+            alt="Nike Logo"
+            width={64} 
+            height={64} // Image height (16 * 4)
+            className="mx-auto mb-2" 
+          />
           <h2 className="text-2xl font-bold text-black">BECOME A NIKE MEMBER</h2>
           <p className="text-gray-600">
             Create your Nike Member profile and get first access to the very best of Nike products, inspiration, and community.
@@ -77,7 +85,7 @@ const SignUp = () => {
             </label>
           </div>
           <p className="text-gray-600 text-sm mb-4">
-            By creating an account, you agree to Nike's <a href="#" className="text-black">Privacy Policy</a> and <a href="#" className="text-black">Terms of Use</a>.
+            By creating an account, you agree to Nike&apos;s <Link href="#" className="text-black">Privacy Policy</Link> and <Link href="#" className="text-black">Terms of Use</Link>.
           </p>
           <button className="w-full p-2 bg-black text-white font-bold rounded hover:bg-gray-800">
             JOIN US
@@ -86,7 +94,7 @@ const SignUp = () => {
 
         <div className="text-center mt-4">
           <p className="text-gray-600">
-            Already a Member? <a href="#" className="text-black">Sign In</a>
+            Already a Member? <Link href="#" className="text-black">Sign In</Link>
           </p>
         </div>
       </div>

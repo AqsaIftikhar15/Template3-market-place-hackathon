@@ -1,8 +1,9 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";  // Updated import
+'use client';
 
-// Define types for the cart items
+import { useSearchParams } from "next/navigation";
+import { useState } from "react";
+import { Suspense } from "react";
+
 type CartItem = {
   id: string;
   name: string;
@@ -10,10 +11,8 @@ type CartItem = {
   quantity: number;
 };
 
-const CheckoutPage = () => {
+const CheckoutPageContent = () => {
   const searchParams = useSearchParams();
-  
-  const totalAmount = searchParams.get("totalAmount");
   const cartData = searchParams.get("cartData");
 
   // Parse the cart data from the query string
@@ -53,7 +52,7 @@ const CheckoutPage = () => {
       {/* Cart Summary */}
       <div className="mb-8">
         <h3 className="text-xl sm:text-2xl mb-4 font-semibold">Order Summary</h3>
-        
+
         {/* Display cart items */}
         <ul className="space-y-4">
           {cartItems.map((item) => (
@@ -92,7 +91,7 @@ const CheckoutPage = () => {
       {/* Payment Form */}
       <form onSubmit={handleSubmit} className="space-y-6">
         <h3 className="text-xl sm:text-2xl mb-4 font-semibold">Payment Method</h3>
-        
+
         <div className="mb-4">
           <label className="block text-sm sm:text-base mb-2" htmlFor="paymentMethod">Payment Method</label>
           <select
@@ -163,6 +162,14 @@ const CheckoutPage = () => {
         </div>
       </form>
     </div>
+  );
+};
+
+const CheckoutPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CheckoutPageContent />
+    </Suspense>
   );
 };
 

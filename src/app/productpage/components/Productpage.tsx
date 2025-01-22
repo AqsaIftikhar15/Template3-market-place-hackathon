@@ -4,12 +4,13 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {useSearchParams } from 'next/navigation'; 
 import { urlFor } from '@/sanity/lib/image';
+import Image from 'next/image';
 
 type Product = {
   _id: string;
   productName: string;
   price: number;
-  category: string; // Assuming your products have a category field
+  category: string; 
   image: { asset: { url: string } };
 };
 
@@ -41,8 +42,8 @@ const ProductListingPage: React.FC<ProductListingProps> = ({ products }) => {
       {filteredProducts.map((product) => (
         <div key={product._id} className="border p-4 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
           <Link href={`/prodetails/${product._id}`}>
-            <img
-              src={urlFor(product.image).width(500).height(500).url()} // Ensure urlFor is used here
+            <Image
+              src={urlFor(product.image).width(500).height(500).url()} 
               alt={product.productName}
               className="w-full h-64 object-cover mb-4 rounded-lg"
             />

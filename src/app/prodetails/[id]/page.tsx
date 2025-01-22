@@ -1,8 +1,8 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useParams } from 'next/navigation';
-import { sanityFetch } from '@/sanity/lib/fetch';
+import { useParams } from 'next/navigation'; // using useParams from next/navigation
+import { sanityFetch } from '@/sanity/lib/fetch'; // Assuming you have a sanityFetch function
 import Link from 'next/link';
 
 type Product = {
@@ -19,12 +19,17 @@ type Product = {
 
 const ProductDetailPage = () => {
   const { id } = useParams();
+  
+  // Ensure id is a string, handle case if id is an array
+  const productId = Array.isArray(id) ? id[0] : id;
+
   const [product, setProduct] = useState<Product | null>(null);
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchProductData = async () => {
-      if (id) {
+      if (productId) {
+        // Fetch product details
         const query = `*[_id == $id][0] { 
           _id,
           productName,
@@ -36,22 +41,23 @@ const ProductDetailPage = () => {
           image { asset -> { _id, url } },
           description
         }`;
-        const productData = await sanityFetch({ query, params: { id } });
+        const productData = await sanityFetch({ query, params: { id: productId } });
         setProduct(productData);
 
+        // Fetch related products
         const relatedQuery = `*[_type == "product" && category == $category && _id != $id][0...3] {
           _id,
           productName,
           price,
           image { asset -> { url } }
         }`;
-        const relatedProductsData = await sanityFetch({ query: relatedQuery, params: { category: productData.category, id } });
+        const relatedProductsData = await sanityFetch({ query: relatedQuery, params: { category: productData.category, id: productId } });
         setRelatedProducts(relatedProductsData);
       }
     };
 
     fetchProductData();
-  }, [id]);
+  }, [productId]);
 
   if (!product) {
     return <div>Product not found</div>;
@@ -72,7 +78,7 @@ const ProductDetailPage = () => {
 
     // Get existing cart from localStorage
     const currentCart = localStorage.getItem('cart');
-    let updatedCart = currentCart ? JSON.parse(currentCart) : [];
+    const updatedCart = currentCart ? JSON.parse(currentCart) : [];
 
     // Check if the item already exists in the cart
     const existingProductIndex = updatedCart.findIndex(

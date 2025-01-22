@@ -61,7 +61,7 @@ export default function Home() {
         <h2 className="text-sm font-bold text-black">Nike Air Max Pulse</h2>
         <p className="text-sm font-semibold text-black"> ₹ 13,995</p>
       </div>
-      <p className="text-[#757575] text-xs">Women's Shoes</p>
+      <p className="text-[#757575] text-xs">Women&apos;s Shoes</p>
     </div>
   </div>
 
@@ -79,7 +79,7 @@ export default function Home() {
         <h2 className="text-sm font-bold text-black">Nike Air Max Pulse</h2>
         <p className="text-sm font-semibold text-black"> ₹ 13,995</p>
       </div>
-      <p className="text-[#757575] text-xs">Men's Shoes</p>
+      <p className="text-[#757575] text-xs">Men&apos;s Shoes</p>
     </div>
   </div>
 
@@ -97,7 +97,7 @@ export default function Home() {
         <h2 className="text-sm font-bold text-black">Nike Air Max 97 SE</h2>
         <p className="text-sm font-semibold text-black"> ₹ 13,995</p>
       </div>
-      <p className="text-[#757575] text-xs">Women's Shoes</p>
+      <p className="text-[#757575] text-xs">Women&apos;s Shoes</p>
     </div>
   </div>
 </div>
@@ -132,15 +132,15 @@ export default function Home() {
       <Productshowcase />
       {/* Gear Up Section */}
       <div className="flex justify-between items-center flex-wrap w-full px-4 md:px-10">
-        <p className="mt-4 text-xl font-bold">Shop Men's</p>
+        <p className="mt-4 text-xl font-bold">Shop Men&apos;s</p>
       </div>
 
-      {/* Don't Miss Section */}
+      {/* Don&apos;t Miss Section */}
       <div className="flex flex-col items-center justify-center text-center px-4">
         <div className="space-y-4">
           <Image
             src="/dontmiss.png"
-            alt="don't miss"
+            alt="don&apos;t miss"
             className="w-full h-[300px] sm:h-[500px] object-contain mt-0"
             width={1200}
             height={500}
@@ -233,12 +233,12 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h5 className="font-semibold mb-2 text-black text-sm">Kids'</h5>
+              <h5 className="font-semibold mb-2 text-black text-sm">Kids&apos;</h5>
               <ul className="text-sm">
                 <li><a href="#" className="hover:underline text-gray-600">Infants & Toddlers Shoes</a></li>
-                <li><a href="#" className="hover:underline text-gray-600">Kids' Shoes</a></li>
-                <li><a href="#" className="hover:underline text-gray-600">Kids' Jordan Shoes</a></li>
-                <li><a href="#" className="hover:underline text-gray-600">Kids' Basketball Shoes</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Kids&apos; Shoes</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Kids&apos; Jordan Shoes</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Kids&apos; Basketball Shoes</a></li>
               </ul>
             </div>
           </div>

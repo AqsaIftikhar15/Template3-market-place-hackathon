@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Navbar3 = () => {
   return (
     <nav className="w-full bg-[#F5F5F5] mb-4 px-4 sm:px-6 lg:px-8">
@@ -7,12 +9,9 @@ const Navbar3 = () => {
         </h3>
         <p className="text-xs sm:text-sm md:text-base font-medium leading-[16px] sm:leading-[18px] text-center mt-1">
           Download the app to access everything Nike.{" "}
-          <a
-            href="/"
-            className="font-medium text-xs sm:text-sm md:text-base text-blue-600 underline"
-          >
+          <Link href="/" className="font-medium text-xs sm:text-sm md:text-base text-blue-600 underline">
             Get Your Great
-          </a>
+          </Link>
         </p>
       </div>
     </nav>
@@ -20,3 +19,4 @@ const Navbar3 = () => {
 };
 
 export default Navbar3;
+

@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { useRouter } from 'next/navigation';
+import Image from 'next/image'; // Import Next.js Image component
 
 // Define the CartItem type
 type CartItem = {
@@ -64,15 +65,6 @@ const CartComponent = () => {
         item._id === id && item.quantity > 1
           ? { ...item, quantity: item.quantity - 1 }
           : item
-      )
-    );
-  };
-
-  // Function to handle color change
-  const handleColorChange = (id: string, newColor: string) => {
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item._id === id ? { ...item, color: newColor } : item
       )
     );
   };
@@ -219,12 +211,13 @@ const CartComponent = () => {
           >
             {/* Left Section: Image */}
             <div className="flex items-center space-x-4">
-              <img
+              <Image
                 src={item.image.asset.url}
                 alt={item.productName}
                 width={100}
                 height={100}
                 className="object-contain"
+                priority // Optional: Use the 'priority' prop if it's a hero image
               />
               <div className="product-details">
                 <h3 className="text-xl font-bold">{item.productName}</h3>

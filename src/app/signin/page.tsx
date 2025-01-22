@@ -1,15 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const SignInForm = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-white p-4">
       <div className="w-full max-w-md p-8 rounded-lg shadow-md bg-white">
         <div className="text-center mb-6">
-          <img
+          <Image
             src="/logo2.png"
             alt="Nike Logo"
-            className="mx-auto mb-4"
+            layout="intrinsic"
+            className="h-auto w-28 mx-auto mb-4"
           />
           <h1 className="text-2xl md:text-3xl font-bold">YOUR ACCOUNT</h1>
           <p className="text-xl md:text-2xl font-bold">FOR EVERYTHING NIKE</p>
@@ -61,7 +63,7 @@ const SignInForm = () => {
 
         <div className="mt-4 text-center">
           <p className="text-gray-600 text-sm md:text-base">
-            By logging in, you agree to Nike's{' '}
+            By logging in, you agree to Nike&apos;s{' '}
             <a href="#" className="text-blue-500 hover:underline" aria-label="Nike Privacy Policy">
               Privacy Policy
             </a>{' '}

@@ -13,9 +13,12 @@ type Product = {
   category: string;
 };
 
+
+// Fetch data inside the component using async/await
 const SidebarPage = async () => {
   const query = '*[_type == "product"]';
-  const products = await sanityFetch({ query });
+  const products: Product[] = await sanityFetch({ query });
+
   const categories: string[] = Array.from(new Set(products.map((product: Product) => product.category)));
 
   return (

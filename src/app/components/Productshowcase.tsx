@@ -32,7 +32,7 @@ export default function ProductShow() {
           <div className="p-4">
             <h2 className="text-sm sm:text-base font-bold text-black">Nike Dri-FIT ADV TechKnit Ultra</h2>
             <p className="text-sm sm:text-base font-semibold text-gray-500">₹ 3 895</p>
-            <p className="text-xs sm:text-sm text-gray-500">Men's Short-Sleeve Running Top</p>
+            <p className="text-xs sm:text-sm text-gray-500">Men&apos;s Short-Sleeve Running Top</p> {/* Use &apos; here */}
           </div>
         </div>
 
@@ -46,7 +46,7 @@ export default function ProductShow() {
           <div className="p-4">
             <h2 className="text-sm sm:text-base font-bold text-black">Nike Dri-FIT Challenger</h2>
             <p className="text-sm sm:text-base font-semibold text-gray-500">₹ 2 495</p>
-            <p className="text-xs sm:text-sm text-gray-500">Men's 18cm (approx.) 2-in-1 Shorts</p>
+            <p className="text-xs sm:text-sm text-gray-500">Men&apos;s 18cm (approx.) 2-in-1 Shorts</p> {/* Use &apos; here */}
           </div>
         </div>
 
@@ -60,7 +60,7 @@ export default function ProductShow() {
           <div className="p-4">
             <h2 className="text-sm sm:text-base font-bold text-black">Nike Dri-FIT ADV Run Division</h2>
             <p className="text-sm sm:text-base font-semibold text-gray-500">₹ 5 295</p>
-            <p className="text-xs sm:text-sm text-gray-500">Women's Long-Sleeve Running Top</p>
+            <p className="text-xs sm:text-sm text-gray-500">Women&apos;s Long-Sleeve Running Top</p> {/* Use &apos; here */}
           </div>
         </div>
 
@@ -74,7 +74,7 @@ export default function ProductShow() {
           <div className="p-4">
             <h2 className="text-sm sm:text-base font-bold text-black">Nike Fast</h2>
             <p className="text-sm sm:text-base font-semibold text-gray-500">₹ 3 795</p>
-            <p className="text-xs sm:text-sm text-gray-500">Women's Mid-Rise 7/8 Running Leggings</p>
+            <p className="text-xs sm:text-sm text-gray-500">Women&apos;s Mid-Rise 7/8 Running Leggings</p> {/* Use &apos; here */}
           </div>
         </div>
       </div>
