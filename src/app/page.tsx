@@ -1,101 +1,249 @@
 import Image from "next/image";
+import Navbar3 from "./components/Navbar3";
+import Productshowcase from "./components/Productshowcase";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <>
+      <Navbar3 />
+      {/* Hero Section */}
+      <div className="flex flex-col items-center justify-center min-h-screen text-center px-4">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src="/airmax.png"
+          alt="airmax"
+          className="w-full h-[300px] sm:h-[500px] object-contain mt-0"
+          width={1200}
+          height={500}
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="space-y-4 mt-6">
+          <p className="text-sm">First look</p>
+          <h1 className="text-3xl sm:text-4xl font-bold">NIKE AIR MAX PULSE</h1>
+          <p className="text-sm sm:text-base max-w-xl mx-auto">
+            Extreme comfort. Hyper durable. Max volume. Introducing the Air Max Pulse — designed to push you past your limits and help you go to the max.
+          </p>
+          <div className="space-x-4 mt-4">
+            <button className="px-4 py-2 bg-black text-white rounded-[30px]">Notify Me</button>
+            <button className="px-4 py-2 bg-black text-white rounded-[30px]">Shop Air Max</button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Best of Air Max Section */}
+      <div className="flex justify-between items-center flex-wrap w-full px-4 md:px-10">
+        <p className="mt-4 text-xl font-bold">Best of Air Max</p>
+        <div className="flex items-center">
+          <p className="mr-4 text-lg font-medium">Shop</p>
+          <div className="flex space-x-4">
+            {/* Left Arrow Circle */}
+            <div className="w-10 h-10 flex items-center justify-center bg-gray-300 rounded-full cursor-pointer hover:bg-gray-400">
+              <span className="text-white text-xl">&#8592;</span>
+            </div>
+            {/* Right Arrow Circle */}
+            <div className="w-10 h-10 flex items-center justify-center bg-gray-300 rounded-full cursor-pointer hover:bg-gray-400">
+              <span className="text-white text-xl">&#8594;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap justify-center space-x-6 mt-10 px-4 md:px-10">
+  {/* Card 1 */}
+  <div className="w-full sm:w-[320px] md:w-[300px] lg:w-[300px] h-[450px] bg-white rounded-lg shadow-lg overflow-hidden mb-4">
+    <Image
+      src="/shoe1.png"
+      alt="Nike Air Max Pulse"
+      className="w-full h-[70%] object-cover"
+      width={380}
+      height={350}
+    />
+    <div className="p-4">
+      <div className="flex justify-between items-center">
+        <h2 className="text-sm font-bold text-black">Nike Air Max Pulse</h2>
+        <p className="text-sm font-semibold text-black"> ₹ 13,995</p>
+      </div>
+      <p className="text-[#757575] text-xs">Women's Shoes</p>
     </div>
+  </div>
+
+  {/* Card 2 */}
+  <div className="w-full sm:w-[320px] md:w-[300px] lg:w-[300px] h-[450px] bg-white rounded-lg shadow-lg overflow-hidden mb-6">
+    <Image
+      src="/shoe1.png"
+      alt="Nike Air Max Pulse"
+      className="w-full h-[70%] object-cover"
+      width={380}
+      height={350}
+    />
+    <div className="p-4">
+      <div className="flex justify-between items-center">
+        <h2 className="text-sm font-bold text-black">Nike Air Max Pulse</h2>
+        <p className="text-sm font-semibold text-black"> ₹ 13,995</p>
+      </div>
+      <p className="text-[#757575] text-xs">Men's Shoes</p>
+    </div>
+  </div>
+
+  {/* Card 3 */}
+  <div className="w-full sm:w-[320px] md:w-[300px] lg:w-[300px] h-[450px] bg-white rounded-lg shadow-lg overflow-hidden mb-6">
+    <Image
+      src="/shoe2.png"
+      alt="Nike Air Max Pulse"
+      className="w-full h-[70%] object-cover"
+      width={380}
+      height={350}
+    />
+    <div className="p-4">
+      <div className="flex justify-between items-center">
+        <h2 className="text-sm font-bold text-black">Nike Air Max 97 SE</h2>
+        <p className="text-sm font-semibold text-black"> ₹ 13,995</p>
+      </div>
+      <p className="text-[#757575] text-xs">Women's Shoes</p>
+    </div>
+  </div>
+</div>
+
+
+      {/* Featured Section */}
+      <div className="flex justify-between items-center flex-wrap w-full px-4 md:px-10">
+        <p className="mt-4 text-xl font-bold">Featured</p>
+      </div>
+      <div className="flex justify-center mb-10">
+        <Image
+          src="/feature.png"
+          alt="featuring"
+          className="w-full h-[300px] sm:h-[500px] object-contain mx-auto"
+          width={1200}
+          height={500}
+        />
+      </div>
+
+      {/* Step Into What Feels Good Section */}
+      <div className="flex flex-col items-center justify-center text-center px-4">
+        <div className="space-y-4">
+          <h1 className="text-3xl sm:text-4xl font-bold">STEP INTO WHAT FEELS GOOD</h1>
+          <p className="text-sm sm:text-base max-w-xl mx-auto">
+            Cause everyone should know the feeling of running in that perfect pair.
+          </p>
+          <div className="space-x-4 mt-4">
+            <button className="px-4 py-2 bg-black text-white rounded-[30px]">Find Your Shoes</button>
+          </div>
+        </div>
+      </div>
+      <Productshowcase />
+      {/* Gear Up Section */}
+      <div className="flex justify-between items-center flex-wrap w-full px-4 md:px-10">
+        <p className="mt-4 text-xl font-bold">Shop Men's</p>
+      </div>
+
+      {/* Don't Miss Section */}
+      <div className="flex flex-col items-center justify-center text-center px-4">
+        <div className="space-y-4">
+          <Image
+            src="/dontmiss.png"
+            alt="don't miss"
+            className="w-full h-[300px] sm:h-[500px] object-contain mt-0"
+            width={1200}
+            height={500}
+          />
+        </div>
+      </div>
+
+      {/* Flight Essentials Section */}
+      <div className="flex flex-col items-center justify-center text-center px-4">
+        <div className="space-y-4">
+          <h1 className="text-3xl sm:text-4xl font-bold">FLIGHT ESSENTIALS</h1>
+          <p className="text-sm sm:text-base max-w-xl mx-auto">
+            Your built-to-last, all-week wears—but with style only Jordan Brand can deliver.
+          </p>
+          <div className="space-x-4 mt-4">
+            <button className="px-4 py-2 bg-black text-white rounded-[30px]">Shop</button>
+          </div>
+        </div>
+      </div>
+
+      {/* The Essentials Section */}
+      <div className="flex justify-between items-center flex-wrap w-full px-4 md:px-10">
+  <p className="mt-4 text-xl font-bold">The Essentials</p>
+</div>
+<div className="flex flex-wrap justify-center mt-10 px-4 md:px-10">
+  <div className="w-full sm:w-[380px] mb-6">
+    <div className="relative w-full h-[auto]">
+      <Image
+        src="/ess1.png"
+        alt="Essentials 1"
+        className="w-full h-auto object-cover"
+        width={380}
+        height={250}  // Adjust the height to your desired aspect ratio
+      />
+    </div>
+  </div>
+  <div className="w-full sm:w-[380px] mb-6">
+    <div className="relative w-full h-[auto]">
+      <Image
+        src="/ess2.png"
+        alt="Essentials 2"
+        className="w-full h-auto object-cover"
+        width={380}
+        height={250}  // Adjust the height to match the aspect ratio
+      />
+    </div>
+  </div>
+  <div className="w-full sm:w-[380px] mb-6">
+    <div className="relative w-full h-[auto]">
+      <Image
+        src="/ess3.png"
+        alt="Essentials 3"
+        className="w-full h-auto object-cover"
+        width={380}
+        height={250}  // Same here, adjust height for proper aspect ratio
+      />
+    </div>
+  </div>
+</div>
+
+      {/* Footer Section */}
+      <footer className="bg-transparent text-white py-10 mt-5">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4 sm:px-6">
+            <div>
+              <h5 className="font-semibold mb-2 text-black text-sm">Icons</h5>
+              <ul className="text-sm">
+                <li><a href="#" className="hover:underline text-gray-600">Air Force 1</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Huarache</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Air Max 90</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Air Max 95</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-semibold mb-2 text-black text-sm">Shoes</h5>
+              <ul className="text-sm">
+                <li><a href="#" className="hover:underline text-gray-600">All Shoes</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Custom Shoes</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Jordan Shoes</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Running Shoes</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-semibold mb-2 text-black text-sm">Clothing</h5>
+              <ul className="text-sm">
+                <li><a href="#" className="hover:underline text-gray-600">All Clothing</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Modest Clothing</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Hoodies & Pullovers</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Shirts & Tops</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="font-semibold mb-2 text-black text-sm">Kids'</h5>
+              <ul className="text-sm">
+                <li><a href="#" className="hover:underline text-gray-600">Infants & Toddlers Shoes</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Kids' Shoes</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Kids' Jordan Shoes</a></li>
+                <li><a href="#" className="hover:underline text-gray-600">Kids' Basketball Shoes</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }
