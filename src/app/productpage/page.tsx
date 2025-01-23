@@ -1,9 +1,9 @@
 import React from 'react';
-import ProductListingPage from './components/Productpage';
 import { ArrowDropDown as DropdownIcon } from '@mui/icons-material';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import Sidenav from './components/Sidenav';
 import Link from 'next/link';
+import ProductListingPageWithSuspense from './components/Productpage';
 
 type Product = {
   _id: string;
@@ -44,8 +44,8 @@ const SidebarPage = async () => {
 
         {/* Product Listing */}
         <div className="w-full sm:w-3/4 p-6">
-          {/* Pass only products to ProductListingPage */}
-          <ProductListingPage products={products} />
+         
+          <ProductListingPageWithSuspense products={products} />
         </div>
       </div>
     </>
